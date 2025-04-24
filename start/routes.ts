@@ -25,4 +25,5 @@ Route.get('/', async () => {
 })
 
 
-Route.get('quan-tracs', 'Api/QuanTracController.index')
+Route.get('quan-tracs-node-1', 'Api/QuanTracController.indexNode1')
+Route.get('quan-tracs-node-2', 'Api/QuanTrac2Controller.indexNode1')

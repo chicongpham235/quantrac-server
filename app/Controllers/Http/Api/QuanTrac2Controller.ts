@@ -4,22 +4,11 @@ import { prisma } from "@ioc:Adonis/Addons/Prisma";
 export default class QuanTracController {
     async indexNode1({request, response}: HttpContextContract) {
         try {
-            const { startDate, endDate } = request.qs()
-
-            const timestampCondition = (startDate || endDate)
-              ? Object.assign(
-                  {},
-                  startDate && { gte: new Date(startDate) },
-                  endDate && { lt: new Date(new Date(endDate).setDate(new Date(endDate).getDate() + 1)) }
-                )
-              : undefined
-        
-            
             // Lấy tất cả các bản ghi từ bảng Messages
             const messages = await prisma.messages.findMany(
                 {
                     where: {
-                        Node: "1",
+                        Node: "2",
                         // Timestamp: {
                         //     gte:  new Date(Date.now() - 1 * 60 * 1000), // Lấy dữ liệu trong 24 giờ qua
                         // }
