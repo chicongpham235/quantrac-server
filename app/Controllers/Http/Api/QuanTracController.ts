@@ -20,9 +20,9 @@ export default class QuanTracController {
                 {
                     where: {
                         Node: "1",
-                        // Timestamp: {
-                        //     gte:  new Date(Date.now() - 1 * 60 * 1000), // Lấy dữ liệu trong 24 giờ qua
-                        // }
+                        Timestamp: {
+                            gte: new Date(Date.now() - 3 * 60 * 60 * 1000) // 3 giờ = 3*60*60 giây
+                        }
                     },
                 }
             );
